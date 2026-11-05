@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusCart | Online Shopping</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    
+    <header class="site-header">
+
+        <a class="brand" href="#">
+            <span class="brand-mark">C</span>
+            CampusCart
+        </a>
+
+        <nav>
+            <a href="#shop">Shop</a>
+            <a href="#how-it-works">How it works</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <button class="cart-trigger" id="open-cart">
+            Cart <span id="cart-count">0</span>
+        </button>
+
+    </header>
+
+
+    
+    <section class="hero">
+
+        <div class="hero-copy">
+
+            <p class="eyebrow">CAMPUS LIFE, SIMPLIFIED</p>
+
+            <h1>
+                Everything you need.
+                <br>
+                <span>One easy cart.</span>
+            </h1>
+
+            <p class="hero-text">
+                Affordable everyday essentials for students.
+                Browse, add to your cart and place an order in minutes.
+            </p>
+
+            <a class="primary-btn" href="#shop">
+                Shop essentials →
+            </a>
+
+            <div class="trust-row">
+                <span>✓ Student-friendly prices</span>
+                <span>✓ Convenient collection</span>
+            </div>
+
+        </div>
+
+        <div class="hero-art">
+            <div class="orbit"></div>
+            <div class="orbit orbit-two"></div>
+
+            <div class="bag">🛍️</div>
+
+            <div class="floating-card card-top">
+                📚 Study smarter
+            </div>
+
+            <div class="floating-card card-bottom">
+                ⚡ Quick ordering
+            </div>
+        </div>
+
+    </section>
+
+    <section class="benefits" id="how-it-works">
+
+        <div>
+            <span class="benefit-icon">🔎</span>
+            <strong>Find what you need</strong>
+            <small>Browse useful student essentials.</small>
+        </div>
+
+        <div>
+            <span class="benefit-icon">🛒</span>
+            <strong>Add to your cart</strong>
+            <small>Review items and quantities.</small>
+        </div>
+
+        <div>
+            <span class="benefit-icon">📦</span>
+            <strong>Place your order</strong>
+            <small>Choose collection or delivery.</small>
+        </div>
+
+    </section>
+
+
+    
+    <section class="shop-section" id="shop">
+
+        <div class="section-heading">
+
+            <div>
+                <p class="eyebrow">THE CAMPUS STORE</p>
+                <h2>Shop essentials</h2>
+                <p class="muted">
+                    Practical products selected for student life.
+                </p>
+            </div>
+
+            <div class="shop-tools">
+
+                <label class="search-box">
+                    <input
+                        id="search"
+                        type="search"
+                        placeholder="Search products..."
+                    >
+                </label>
+
+                <select id="category-filter">
+                    <option value="All">All categories</option>
+                    <option>Study</option>
+                    <option>Tech</option>
+                    <option>Daily</option>
+                </select>
+
+            </div>
+
+        </div>
+
+        <div class="product-grid" id="product-grid"></div>
+
+    </section>
+
+
+    
+    <section class="about-section" id="about">
+
+        <div>
+            <p class="eyebrow">WHY CAMPUSCART?</p>
+
+            <h2>
+                Less time searching.
+                <br>
+                More time learning.
+            </h2>
+        </div>
+
+        <p>
+            CampusCart is a student-focused online shop that brings
+            useful, affordable essentials together in one place.
+            Customers can discover products, build a cart and submit
+            an order without visiting several shops.
+        </p>
+
+    </section>
+
+
+    
+    <footer>
+
+        <a class="brand" href="#">
+            <span class="brand-mark">C</span>
+            CampusCart
+        </a>
+
+        <p>Student essentials, made easy.</p>
+
+        <small>
+            © <span id="year"></span> CampusCart.
+        </small>
+
+    </footer>
+
+
+    
+    <div class="overlay" id="overlay"></div>
+
+    <aside class="cart-panel" id="cart-panel">
+
+        <div class="cart-header">
+
+            <h2>Your cart</h2>
+
+            <button class="icon-btn" id="close-cart">
+                ✕
+            </button>
+
+        </div>
+
+        <div id="cart-items" class="cart-items"></div>
+
+        <div class="cart-footer">
+
+            <div class="total-row">
+                <span>Subtotal</span>
+                <strong id="cart-total">KSh 0</strong>
+            </div>
+
+            <button class="primary-btn full-btn" id="checkout-btn">
+                Continue to checkout →
+            </button>
+
+        </div>
+
+    </aside>
+
+
+   
+    <section class="checkout-modal" id="checkout-modal">
+
+        <div class="modal-heading">
+
+            <h2>Checkout</h2>
+
+            <button class="icon-btn" id="close-checkout">
+                ✕
+            </button>
+
+        </div>
+
+        <form id="checkout-form">
+
+            <label>
+                Full name
+                <input name="name" required minlength="2">
+            </label>
+
+            <label>
+                Phone number
+                <input
+                    name="phone"
+                    required
+                    pattern="(07|01)[0-9]{8}"
+                    placeholder="07XXXXXXXX"
+                >
+            </label>
+
+            <label>
+                Collection method
+
+                <select name="method" required>
+                    <option value="Campus collection">
+                        Campus collection
+                    </option>
+
+                    <option value="Local delivery">
+                        Local delivery
+                    </option>
+                </select>
+            </label>
+
+            <label>
+                Additional instructions
+
+                <textarea name="notes"></textarea>
+            </label>
+
+            <div class="checkout-total">
+                <span>Order total</span>
+                <strong id="checkout-total">KSh 0</strong>
+            </div>
+
+            <button class="primary-btn full-btn" type="submit">
+                Place order
+            </button>
+
+            <p class="tiny-note">
+                Demo checkout only. No real payment is collected.
+            </p>
+
+        </form>
+
+    </section>
+
+
+   
+    <section class="success-modal" id="success-modal">
+
+        <h2>Thank you!</h2>
+
+        <p id="success-message">
+            Your order has been recorded.
+        </p>
+
+        <p id="order-number"></p>
+
+        <button class="primary-btn full-btn" id="finish-order">
+            Continue shopping
+        </button>
+
+    </section>
+
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html> 
